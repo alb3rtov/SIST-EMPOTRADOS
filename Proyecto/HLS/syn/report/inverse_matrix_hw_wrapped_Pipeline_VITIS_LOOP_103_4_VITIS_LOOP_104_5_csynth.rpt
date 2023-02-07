@@ -1,0 +1,168 @@
+
+
+================================================================
+== Vitis HLS Report for 'inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5'
+================================================================
+* Date:           Mon Jan 23 11:32:54 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        inverse_matrix_se
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.739 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      102|      102|  1.020 us|  1.020 us|  102|  102|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_103_4_VITIS_LOOP_104_5  |      100|      100|         2|          1|          1|   100|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    132|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     81|    -|
+|Register         |        -|    -|      19|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      19|    213|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln103_1_fu_151_p2      |         +|   0|  0|  14|           7|           1|
+    |add_ln103_fu_163_p2        |         +|   0|  0|  12|           4|           1|
+    |add_ln104_fu_264_p2        |         +|   0|  0|  12|           4|           1|
+    |add_ln112_1_fu_241_p2      |         +|   0|  0|  16|           7|           7|
+    |add_ln112_fu_211_p2        |         +|   0|  0|  16|           7|           7|
+    |ap_block_pp0_stage0_01001  |       and|   0|  0|   2|           1|           1|
+    |e_last_V_fu_258_p2         |       and|   0|  0|   2|           1|           1|
+    |cmp4318_fu_223_p2          |      icmp|   0|  0|   9|           4|           4|
+    |cmp43_mid1_fu_217_p2       |      icmp|   0|  0|   9|           4|           4|
+    |icmp_ln103_fu_145_p2       |      icmp|   0|  0|  10|           7|           6|
+    |icmp_ln104_fu_169_p2       |      icmp|   0|  0|   9|           4|           4|
+    |icmp_ln120_fu_252_p2       |      icmp|   0|  0|   9|           4|           4|
+    |select_ln103_1_fu_183_p3   |    select|   0|  0|   4|           1|           4|
+    |select_ln103_2_fu_229_p3   |    select|   0|  0|   2|           1|           1|
+    |select_ln103_fu_175_p3     |    select|   0|  0|   4|           1|           1|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0| 132|          58|          49|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+----+-----------+-----+-----------+
+    |                  Name                  | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |OUTPUT_STREAM_TDATA_blk_n               |   9|          2|    1|          2|
+    |ap_done_int                             |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                 |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_load                 |   9|          2|    4|          8|
+    |ap_sig_allocacmp_indvar_flatten10_load  |   9|          2|    7|         14|
+    |ap_sig_allocacmp_j_load                 |   9|          2|    4|          8|
+    |i_fu_76                                 |   9|          2|    4|          8|
+    |indvar_flatten10_fu_80                  |   9|          2|    7|         14|
+    |j_fu_72                                 |   9|          2|    4|          8|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |Total                                   |  81|         18|   33|         66|
+    +----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+---+----+-----+-----------+
+    |           Name          | FF| LUT| Bits| Const Bits|
+    +-------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                |  1|   0|    1|          0|
+    |ap_done_reg              |  1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1  |  1|   0|    1|          0|
+    |e_last_V_reg_319         |  1|   0|    1|          0|
+    |i_fu_76                  |  4|   0|    4|          0|
+    |indvar_flatten10_fu_80   |  7|   0|    7|          0|
+    |j_fu_72                  |  4|   0|    4|          0|
+    +-------------------------+---+----+-----+-----------+
+    |Total                    | 19|   0|   19|          0|
+    +-------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |                             Source Object                            |    C Type    |
++----------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+|ap_clk                |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|ap_rst                |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|ap_start              |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|ap_done               |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|ap_idle               |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|ap_ready              |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5|  return value|
+|OUTPUT_STREAM_TREADY  |   in|    1|        axis|                                                OUTPUT_STREAM_V_data_V|       pointer|
+|OUTPUT_STREAM_TDATA   |  out|   32|        axis|                                                OUTPUT_STREAM_V_data_V|       pointer|
+|inv_address0          |  out|    7|   ap_memory|                                                                   inv|         array|
+|inv_ce0               |  out|    1|   ap_memory|                                                                   inv|         array|
+|inv_q0                |   in|   32|   ap_memory|                                                                   inv|         array|
+|OUTPUT_STREAM_TVALID  |  out|    1|        axis|                                                OUTPUT_STREAM_V_dest_V|       pointer|
+|OUTPUT_STREAM_TDEST   |  out|    5|        axis|                                                OUTPUT_STREAM_V_dest_V|       pointer|
+|OUTPUT_STREAM_TKEEP   |  out|    4|        axis|                                                OUTPUT_STREAM_V_keep_V|       pointer|
+|OUTPUT_STREAM_TSTRB   |  out|    4|        axis|                                                OUTPUT_STREAM_V_strb_V|       pointer|
+|OUTPUT_STREAM_TUSER   |  out|    4|        axis|                                                OUTPUT_STREAM_V_user_V|       pointer|
+|OUTPUT_STREAM_TLAST   |  out|    1|        axis|                                                OUTPUT_STREAM_V_last_V|       pointer|
+|OUTPUT_STREAM_TID     |  out|    5|        axis|                                                  OUTPUT_STREAM_V_id_V|       pointer|
++----------------------+-----+-----+------------+----------------------------------------------------------------------+--------------+
+

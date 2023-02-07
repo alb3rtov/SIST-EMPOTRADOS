@@ -1,0 +1,327 @@
+
+
+================================================================
+== Synthesis Summary Report of 'inverse_matrix_hw_wrapped'
+================================================================
++ General Information: 
+    * Date:           Mon Jan 23 11:32:56 2023
+    * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+    * Project:        inverse_matrix_se
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu3eg-sbva484-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-------------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+------------+-----+
+    |                                 Modules                                 | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |          |           |            |     |
+    |                                 & Loops                                 | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP   |     FF    |     LUT    | URAM|
+    +-------------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+------------+-----+
+    |+ inverse_matrix_hw_wrapped                                              |     -|  0.59|     3805|  3.805e+04|         -|     3806|     -|        no|   5 (1%)|  37 (10%)|  6269 (4%)|  7232 (10%)|    -|
+    | + inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_87_1_VITIS_LOOP_88_2    |     -|  4.16|      108|  1.080e+03|         -|      108|     -|        no|        -|         -|  327 (~0%)|   328 (~0%)|    -|
+    |  o VITIS_LOOP_87_1_VITIS_LOOP_88_2                                      |     -|  7.30|      106|  1.060e+03|         8|        1|   100|       yes|        -|         -|          -|           -|    -|
+    | + inverse_matrix_hw                                                     |     -|  0.59|     3588|  3.588e+04|         -|     3588|     -|        no|  2 (~0%)|  37 (10%)|  5869 (4%)|   6478 (9%)|    -|
+    |  + inverse_matrix_hw_Pipeline_L1_L2                                     |     -|  4.04|      109|  1.090e+03|         -|      109|     -|        no|        -|         -|  240 (~0%)|   320 (~0%)|    -|
+    |   o L1_L2                                                               |     -|  7.30|      107|  1.070e+03|         9|        1|   100|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L3_L4                                     |     -|  2.51|      102|  1.020e+03|         -|      102|     -|        no|        -|         -|   17 (~0%)|   314 (~0%)|    -|
+    |   o L3_L4                                                               |     -|  7.30|      100|  1.000e+03|         1|        1|   100|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L5_L6                                     |     -|  0.59|     3102|  3.102e+04|         -|     3102|     -|        no|        -|  37 (10%)|  3861 (2%)|   3529 (5%)|    -|
+    |   o L5_L6                                                               |    II|  7.30|     3100|  3.100e+04|        31|       31|   100|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L9                                        |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   121 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L93                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   146 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L94                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   146 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L95                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   148 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L96                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   148 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L97                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   146 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L98                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   150 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L99                                       |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   150 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L910                                      |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   121 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    |  + inverse_matrix_hw_Pipeline_L911                                      |     -|  0.59|       23|    230.000|         -|       23|     -|        no|        -|         -|  166 (~0%)|   150 (~0%)|    -|
+    |   o L9                                                                  |     -|  7.30|       21|    210.000|        13|        1|    10|       yes|        -|         -|          -|           -|    -|
+    | + inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5  |     -|  3.56|      102|  1.020e+03|         -|      102|     -|        no|        -|         -|   19 (~0%)|   213 (~0%)|    -|
+    |  o VITIS_LOOP_103_4_VITIS_LOOP_104_5                                    |     -|  7.30|      100|  1.000e+03|         2|        1|   100|       yes|        -|         -|          -|           -|    -|
+    +-------------------------------------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++-------------------+------------+---------------+
+| Interface         | Data Width | Address Width |
++-------------------+------------+---------------+
+| s_axi_CONTROL_BUS | 32         | 4             |
++-------------------+------------+---------------+
+
+* S_AXILITE Registers
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| Interface         | Register | Offset | Width | Access | Description                      | Bit Fields                                               |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART |
+| s_axi_CONTROL_BUS | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                 |
+| s_axi_CONTROL_BUS | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN             |
+| s_axi_CONTROL_BUS | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST             |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+
+* AXIS
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| Interface     | Register Mode | TDATA | TDEST | TID | TKEEP | TLAST | TREADY | TSTRB | TUSER | TVALID |
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| INPUT_STREAM  | both          | 32    | 5     | 5   | 4     | 1     | 1      | 4     | 4     | 1      |
+| OUTPUT_STREAM | both          | 32    | 5     | 5   | 4     | 1     | 1      | 4     | 4     | 1      |
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+---------------------------------------------+
+| Argument      | Direction | Datatype                                    |
++---------------+-----------+---------------------------------------------+
+| INPUT_STREAM  | in        | stream<hls::axis<ap_uint<32>, 4, 5, 5>, 0>& |
+| OUTPUT_STREAM | out       | stream<hls::axis<ap_uint<32>, 4, 5, 5>, 0>& |
++---------------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+
+| Argument      | HW Interface  | HW Type   |
++---------------+---------------+-----------+
+| INPUT_STREAM  | INPUT_STREAM  | interface |
+| OUTPUT_STREAM | OUTPUT_STREAM | interface |
++---------------+---------------+-----------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
+
+================================================================
+== Bind Op Report
+================================================================
++-------------------------------------------------------------------------+-----+--------+-----------------------+------+---------+---------+
+| Name                                                                    | DSP | Pragma | Variable              | Op   | Impl    | Latency |
++-------------------------------------------------------------------------+-----+--------+-----------------------+------+---------+---------+
+| + inverse_matrix_hw_wrapped                                             | 37  |        |                       |      |         |         |
+|  + inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_87_1_VITIS_LOOP_88_2   | 0   |        |                       |      |         |         |
+|    add_ln87_1_fu_154_p2                                                 | -   |        | add_ln87_1            | add  | fabric  | 0       |
+|    add_ln87_fu_166_p2                                                   | -   |        | add_ln87              | add  | fabric  | 0       |
+|    add_ln95_fu_267_p2                                                   | -   |        | add_ln95              | add  | tadder  | 0       |
+|    mul_4ns_6ns_9_1_1_U2                                                 | -   |        | mul_ln87              | mul  | auto    | 0       |
+|    add_ln95_1_fu_276_p2                                                 | -   |        | add_ln95_1            | add  | tadder  | 0       |
+|    add_ln88_fu_222_p2                                                   | -   |        | add_ln88              | add  | fabric  | 0       |
+|  + inverse_matrix_hw                                                    | 37  |        |                       |      |         |         |
+|   + inverse_matrix_hw_Pipeline_L1_L2                                    | 0   |        |                       |      |         |         |
+|     add_ln20_1_fu_141_p2                                                | -   |        | add_ln20_1            | add  | fabric  | 0       |
+|     add_ln20_fu_153_p2                                                  | -   |        | add_ln20              | add  | fabric  | 0       |
+|     mul_4ns_6ns_9_1_1_U15                                               | -   |        | mul_ln20              | mul  | auto    | 0       |
+|     add_ln22_2_fu_232_p2                                                | -   |        | add_ln22_2            | add  | tadder  | 0       |
+|     add_ln22_3_fu_241_p2                                                | -   |        | add_ln22_3            | add  | tadder  | 0       |
+|     add_ln22_1_fu_297_p2                                                | -   |        | add_ln22_1            | add  | fabric  | 0       |
+|     add_ln22_fu_306_p2                                                  | -   |        | add_ln22              | add  | fabric  | 0       |
+|     add_ln21_fu_187_p2                                                  | -   |        | add_ln21              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L3_L4                                    | 0   |        |                       |      |         |         |
+|     empty_fu_130_p2                                                     | -   |        | empty                 | add  | fabric  | 0       |
+|     tmp2_fu_136_p2                                                      | -   |        | tmp2                  | add  | tadder  | 0       |
+|     arrayidx1321_sum_fu_142_p2                                          | -   |        | arrayidx1321_sum      | add  | tadder  | 0       |
+|     add_ln27_1_fu_154_p2                                                | -   |        | add_ln27_1            | add  | fabric  | 0       |
+|     add_ln27_fu_163_p2                                                  | -   |        | add_ln27              | add  | fabric  | 0       |
+|     p_mid112_fu_207_p2                                                  | -   |        | p_mid112              | add  | fabric  | 0       |
+|     tmp2_mid1_fu_221_p2                                                 | -   |        | tmp2_mid1             | add  | tadder  | 0       |
+|     arrayidx1321_sum_mid1_fu_227_p2                                     | -   |        | arrayidx1321_sum_mid1 | add  | tadder  | 0       |
+|     add_ln33_fu_264_p2                                                  | -   |        | add_ln33              | add  | fabric  | 0       |
+|     add_ln33_1_fu_274_p2                                                | -   |        | add_ln33_1            | add  | fabric  | 0       |
+|     add_ln28_fu_285_p2                                                  | -   |        | add_ln28              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L5_L6                                    | 37  |        |                       |      |         |         |
+|     add_ln40_1_fu_634_p2                                                | -   |        | add_ln40_1            | add  | fabric  | 0       |
+|     add_ln40_fu_640_p2                                                  | -   |        | add_ln40              | add  | fabric  | 0       |
+|     add_ln39_17_fu_652_p2                                               | -   |        | add_ln39_17           | add  | fabric  | 0       |
+|     add_ln39_fu_661_p2                                                  | -   |        | add_ln39              | add  | fabric  | 0       |
+|     add_ln40_2_fu_717_p2                                                | -   |        | add_ln40_2            | add  | fabric  | 0       |
+|     add_ln40_3_fu_735_p2                                                | -   |        | add_ln40_3            | add  | fabric  | 0       |
+|     add_ln39_1_fu_784_p2                                                | -   |        | add_ln39_1            | add  | fabric  | 0       |
+|     add_ln39_2_fu_794_p2                                                | -   |        | add_ln39_2            | add  | fabric  | 0       |
+|     add_ln39_3_fu_804_p2                                                | -   |        | add_ln39_3            | add  | fabric  | 0       |
+|     add_ln39_4_fu_814_p2                                                | -   |        | add_ln39_4            | add  | fabric  | 0       |
+|     add_ln39_5_fu_824_p2                                                | -   |        | add_ln39_5            | add  | fabric  | 0       |
+|     add_ln39_6_fu_834_p2                                                | -   |        | add_ln39_6            | add  | fabric  | 0       |
+|     add_ln39_7_fu_844_p2                                                | -   |        | add_ln39_7            | add  | fabric  | 0       |
+|     add_ln39_8_fu_854_p2                                                | -   |        | add_ln39_8            | add  | fabric  | 0       |
+|     add_ln39_9_fu_864_p2                                                | -   |        | add_ln39_9            | add  | fabric  | 0       |
+|     add_ln39_10_fu_874_p2                                               | -   |        | add_ln39_10           | add  | fabric  | 0       |
+|     add_ln39_11_fu_884_p2                                               | -   |        | add_ln39_11           | add  | fabric  | 0       |
+|     add_ln39_12_fu_894_p2                                               | -   |        | add_ln39_12           | add  | fabric  | 0       |
+|     add_ln39_13_fu_904_p2                                               | -   |        | add_ln39_13           | add  | fabric  | 0       |
+|     add_ln39_14_fu_914_p2                                               | -   |        | add_ln39_14           | add  | fabric  | 0       |
+|     add_ln39_15_fu_924_p2                                               | -   |        | add_ln39_15           | add  | fabric  | 0       |
+|     add_ln39_16_fu_934_p2                                               | -   |        | add_ln39_16           | add  | fabric  | 0       |
+|     add_ln46_1_fu_970_p2                                                | -   |        | add_ln46_1            | add  | fabric  | 0       |
+|     add_ln46_fu_976_p2                                                  | -   |        | add_ln46              | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U24                                   | 3   |        | mul                   | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub                   | fsub | fulldsp | 4       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U25                                   | 3   |        | mul_1                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_1                 | fsub | fulldsp | 4       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U26                                   | 3   |        | mul_2                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_2                 | fsub | fulldsp | 4       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U27                                   | 3   |        | mul_3                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_3                 | fsub | fulldsp | 4       |
+|     add_ln48_fu_1021_p2                                                 | -   |        | add_ln48              | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U28                                   | 3   |        | mul_4                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_4                 | fsub | fulldsp | 4       |
+|     add_ln48_1_fu_1031_p2                                               | -   |        | add_ln48_1            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U29                                   | 3   |        | mul_5                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_5                 | fsub | fulldsp | 4       |
+|     add_ln48_2_fu_1041_p2                                               | -   |        | add_ln48_2            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U30                                   | 3   |        | mul_6                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_6                 | fsub | fulldsp | 4       |
+|     add_ln48_3_fu_1051_p2                                               | -   |        | add_ln48_3            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U31                                   | 3   |        | mul_7                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_7                 | fsub | fulldsp | 4       |
+|     add_ln48_4_fu_1061_p2                                               | -   |        | add_ln48_4            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U32                                   | 3   |        | mul_8                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_8                 | fsub | fulldsp | 4       |
+|     add_ln48_5_fu_1071_p2                                               | -   |        | add_ln48_5            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U33                                   | 3   |        | mul_9                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_9                 | fsub | fulldsp | 4       |
+|     add_ln48_6_fu_1081_p2                                               | -   |        | add_ln48_6            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U34                                   | 3   |        | mul_s                 | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_s                 | fsub | fulldsp | 4       |
+|     add_ln48_7_fu_1091_p2                                               | -   |        | add_ln48_7            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U24                                   | 3   |        | mul_10                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_10                | fsub | fulldsp | 4       |
+|     add_ln48_8_fu_1101_p2                                               | -   |        | add_ln48_8            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U25                                   | 3   |        | mul_11                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_11                | fsub | fulldsp | 4       |
+|     add_ln48_9_fu_1111_p2                                               | -   |        | add_ln48_9            | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U26                                   | 3   |        | mul_12                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_12                | fsub | fulldsp | 4       |
+|     add_ln48_10_fu_1121_p2                                              | -   |        | add_ln48_10           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U27                                   | 3   |        | mul_13                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_13                | fsub | fulldsp | 4       |
+|     add_ln48_11_fu_1131_p2                                              | -   |        | add_ln48_11           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U28                                   | 3   |        | mul_14                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_14                | fsub | fulldsp | 4       |
+|     add_ln48_12_fu_1141_p2                                              | -   |        | add_ln48_12           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U29                                   | 3   |        | mul_15                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_15                | fsub | fulldsp | 4       |
+|     add_ln48_13_fu_1151_p2                                              | -   |        | add_ln48_13           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U30                                   | 3   |        | mul_16                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_16                | fsub | fulldsp | 4       |
+|     add_ln48_14_fu_1161_p2                                              | -   |        | add_ln48_14           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U31                                   | 3   |        | mul_17                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U22                                  | 2   |        | sub_17                | fsub | fulldsp | 4       |
+|     add_ln48_15_fu_1171_p2                                              | -   |        | add_ln48_15           | add  | fabric  | 0       |
+|     fmul_32ns_32ns_32_4_max_dsp_1_U32                                   | 3   |        | mul_18                | fmul | maxdsp  | 3       |
+|     fsub_32ns_32ns_32_5_full_dsp_1_U23                                  | 2   |        | sub_18                | fsub | fulldsp | 4       |
+|     add_ln44_fu_1181_p2                                                 | -   |        | add_ln44              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L9                                       | 0   |        |                       |      |         |         |
+|     add_ln59_fu_101_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln58_fu_115_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L93                                      | 0   |        |                       |      |         |         |
+|     add_ln59_2_fu_103_p2                                                | -   |        | add_ln59_2            | add  | fabric  | 0       |
+|     add_ln59_fu_146_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_1_fu_116_p2                                                | -   |        | add_ln59_1            | add  | fabric  | 0       |
+|     add_ln58_fu_127_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L94                                      | 0   |        |                       |      |         |         |
+|     add_ln59_4_fu_105_p2                                                | -   |        | add_ln59_4            | add  | fabric  | 0       |
+|     add_ln59_fu_148_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_9_fu_118_p2                                                | -   |        | add_ln59_9            | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L95                                      | 0   |        |                       |      |         |         |
+|     add_ln59_6_fu_105_p2                                                | -   |        | add_ln59_6            | add  | fabric  | 0       |
+|     add_ln59_fu_148_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_5_fu_118_p2                                                | -   |        | add_ln59_5            | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L96                                      | 0   |        |                       |      |         |         |
+|     add_ln59_fu_105_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_8_fu_148_p2                                                | -   |        | add_ln59_8            | add  | fabric  | 0       |
+|     add_ln59_7_fu_118_p2                                                | -   |        | add_ln59_7            | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L97                                      | 0   |        |                       |      |         |         |
+|     add_ln59_fu_105_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_5_fu_152_p2                                                | -   |        | add_ln59_5            | add  | fabric  | 0       |
+|     add_ln59_6_fu_118_p2                                                | -   |        | add_ln59_6            | add  | fabric  | 0       |
+|     add_ln58_fu_133_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L98                                      | 0   |        |                       |      |         |         |
+|     add_ln59_fu_105_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_3_fu_148_p2                                                | -   |        | add_ln59_3            | add  | fabric  | 0       |
+|     add_ln59_4_fu_118_p2                                                | -   |        | add_ln59_4            | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L99                                      | 0   |        |                       |      |         |         |
+|     add_ln59_fu_105_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_1_fu_148_p2                                                | -   |        | add_ln59_1            | add  | fabric  | 0       |
+|     add_ln59_2_fu_118_p2                                                | -   |        | add_ln59_2            | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L910                                     | 0   |        |                       |      |         |         |
+|     add_ln59_fu_109_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln58_fu_131_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|   + inverse_matrix_hw_Pipeline_L911                                     | 0   |        |                       |      |         |         |
+|     add_ln59_fu_105_p2                                                  | -   |        | add_ln59              | add  | fabric  | 0       |
+|     add_ln59_10_fu_148_p2                                               | -   |        | add_ln59_10           | add  | fabric  | 0       |
+|     add_ln59_11_fu_118_p2                                               | -   |        | add_ln59_11           | add  | fabric  | 0       |
+|     add_ln58_fu_129_p2                                                  | -   |        | add_ln58              | add  | fabric  | 0       |
+|  + inverse_matrix_hw_wrapped_Pipeline_VITIS_LOOP_103_4_VITIS_LOOP_104_5 | 0   |        |                       |      |         |         |
+|    add_ln103_1_fu_151_p2                                                | -   |        | add_ln103_1           | add  | fabric  | 0       |
+|    add_ln103_fu_163_p2                                                  | -   |        | add_ln103             | add  | fabric  | 0       |
+|    add_ln112_fu_211_p2                                                  | -   |        | add_ln112             | add  | tadder  | 0       |
+|    add_ln112_1_fu_241_p2                                                | -   |        | add_ln112_1           | add  | tadder  | 0       |
+|    add_ln104_fu_264_p2                                                  | -   |        | add_ln104             | add  | fabric  | 0       |
++-------------------------------------------------------------------------+-----+--------+-----------------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++-----------------------------+------+------+--------+----------+---------+------+---------+
+| Name                        | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++-----------------------------+------+------+--------+----------+---------+------+---------+
+| + inverse_matrix_hw_wrapped | 5    | 0    |        |          |         |      |         |
+|   in_U                      | 1    | -    |        | in       | ram_1p  | auto | 1       |
+|   in_1_U                    | 1    | -    |        | in_1     | ram_1p  | auto | 1       |
+|   inv_U                     | 1    | -    |        | inv      | ram_1p  | auto | 1       |
+|  + inverse_matrix_hw        | 2    | 0    |        |          |         |      |         |
+|    temp_U                   | 2    | -    |        | temp     | ram_t2p | auto | 1       |
++-----------------------------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== User Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------+-----------------------------------------------------------------------------------------+
+| Type            | Options                                  | Location                                                                                |
++-----------------+------------------------------------------+-----------------------------------------------------------------------------------------+
+| array_partition | dim=1 factor=2 block variable=in         | inverse_matrix_se_src/inverse_matrix.cpp:11 in inverse_matrix_hw, in                    |
+| unroll          |                                          | inverse_matrix_se_src/inverse_matrix.cpp:57 in inverse_matrix_hw                        |
+| interface       | s_axilite port=return bundle=CONTROL_BUS | inverse_matrix_se_src/inverse_matrix.cpp:74 in inverse_matrix_hw_wrapped, return        |
+| interface       | axis port=INPUT_STREAM                   | inverse_matrix_se_src/inverse_matrix.cpp:75 in inverse_matrix_hw_wrapped, INPUT_STREAM  |
+| interface       | axis port=OUTPUT_STREAM                  | inverse_matrix_se_src/inverse_matrix.cpp:76 in inverse_matrix_hw_wrapped, OUTPUT_STREAM |
+| pipeline        | II=1                                     | inverse_matrix_se_src/inverse_matrix.cpp:90 in inverse_matrix_hw_wrapped                |
+| pipeline        | II=1                                     | inverse_matrix_se_src/inverse_matrix.cpp:106 in inverse_matrix_hw_wrapped               |
++-----------------+------------------------------------------+-----------------------------------------------------------------------------------------+
+
+

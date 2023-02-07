@@ -1,0 +1,179 @@
+
+
+================================================================
+== Vitis HLS Report for 'inverse_matrix_hw_Pipeline_L93'
+================================================================
+* Date:           Mon Jan 23 11:32:50 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        inverse_matrix_se
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.708 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       23|       23|  0.230 us|  0.230 us|   23|   23|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- L9      |       21|       21|        13|          1|          1|    10|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     60|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     54|    -|
+|Register         |        -|    -|     166|     32|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     166|    146|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------+----------+----+---+----+------------+------------+
+    |add_ln58_fu_127_p2    |         +|   0|  0|  12|           5|           1|
+    |add_ln59_1_fu_116_p2  |         +|   0|  0|  13|           6|           5|
+    |add_ln59_2_fu_103_p2  |         +|   0|  0|  12|           4|           1|
+    |add_ln59_fu_146_p2    |         +|   0|  0|  12|           5|           4|
+    |icmp_ln58_fu_97_p2    |      icmp|   0|  0|   9|           4|           4|
+    |ap_enable_pp0         |       xor|   0|  0|   2|           1|           2|
+    +----------------------+----------+----+---+----+------------+------------+
+    |Total                 |          |   0|  0|  60|          25|          17|
+    +----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_j_load  |   9|          2|    5|         10|
+    |ap_sig_allocacmp_k       |   9|          2|    4|          8|
+    |j_fu_44                  |   9|          2|    5|         10|
+    |k_1_fu_40                |   9|          2|    4|          8|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  54|         12|   20|         40|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------+----+----+-----+-----------+
+    |                Name               | FF | LUT| Bits| Const Bits|
+    +-----------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                          |   1|   0|    1|          0|
+    |ap_done_reg                        |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter12           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8            |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9            |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter10_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter11_reg  |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter7_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter8_reg   |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter9_reg   |   1|   0|    1|          0|
+    |div65_1_reg_195                    |  32|   0|   32|          0|
+    |j_fu_44                            |   5|   0|    5|          0|
+    |k_1_fu_40                          |   4|   0|    4|          0|
+    |k_reg_176                          |   4|   0|    4|          0|
+    |temp_load_reg_190                  |  32|   0|   32|          0|
+    |k_reg_176                          |  64|  32|    4|          0|
+    +-----------------------------------+----+----+-----+-----------+
+    |Total                              | 166|  32|  106|          0|
+    +-----------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+--------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |          Source Object         |    C Type    |
++--------------------+-----+-----+------------+--------------------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|grp_fu_307_p_din0   |  out|   32|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|grp_fu_307_p_din1   |  out|   32|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|grp_fu_307_p_dout0  |   in|   32|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|grp_fu_307_p_ce     |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw_Pipeline_L93|  return value|
+|inv_address0        |  out|    7|   ap_memory|                             inv|         array|
+|inv_ce0             |  out|    1|   ap_memory|                             inv|         array|
+|inv_we0             |  out|    1|   ap_memory|                             inv|         array|
+|inv_d0              |  out|   32|   ap_memory|                             inv|         array|
+|temp_address0       |  out|    9|   ap_memory|                            temp|         array|
+|temp_ce0            |  out|    1|   ap_memory|                            temp|         array|
+|temp_q0             |   in|   32|   ap_memory|                            temp|         array|
+|temp_load_1         |   in|   32|     ap_none|                     temp_load_1|        scalar|
++--------------------+-----+-----+------------+--------------------------------+--------------+
+

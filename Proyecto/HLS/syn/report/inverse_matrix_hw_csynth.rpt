@@ -1,0 +1,195 @@
+
+
+================================================================
+== Vitis HLS Report for 'inverse_matrix_hw'
+================================================================
+* Date:           Mon Jan 23 11:32:53 2023
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:48:09 MDT 2021)
+* Project:        inverse_matrix_se
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.708 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     3588|     3588|  35.880 us|  35.880 us|  3588|  3588|       no|
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |                                             |                                  |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+        |                   Instance                  |              Module              |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+        |grp_inverse_matrix_hw_Pipeline_L1_L2_fu_143  |inverse_matrix_hw_Pipeline_L1_L2  |      109|      109|   1.090 us|   1.090 us|   109|   109|       no|
+        |grp_inverse_matrix_hw_Pipeline_L3_L4_fu_153  |inverse_matrix_hw_Pipeline_L3_L4  |      102|      102|   1.020 us|   1.020 us|   102|   102|       no|
+        |grp_inverse_matrix_hw_Pipeline_L5_L6_fu_158  |inverse_matrix_hw_Pipeline_L5_L6  |     3102|     3102|  31.020 us|  31.020 us|  3102|  3102|       no|
+        |grp_inverse_matrix_hw_Pipeline_L9_fu_163     |inverse_matrix_hw_Pipeline_L9     |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L93_fu_171    |inverse_matrix_hw_Pipeline_L93    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L94_fu_179    |inverse_matrix_hw_Pipeline_L94    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L95_fu_187    |inverse_matrix_hw_Pipeline_L95    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L96_fu_195    |inverse_matrix_hw_Pipeline_L96    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L97_fu_203    |inverse_matrix_hw_Pipeline_L97    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L98_fu_211    |inverse_matrix_hw_Pipeline_L98    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L99_fu_219    |inverse_matrix_hw_Pipeline_L99    |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L910_fu_227   |inverse_matrix_hw_Pipeline_L910   |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        |grp_inverse_matrix_hw_Pipeline_L911_fu_235   |inverse_matrix_hw_Pipeline_L911   |       23|       23|   0.230 us|   0.230 us|    23|    23|       no|
+        +---------------------------------------------+----------------------------------+---------+---------+-----------+-----------+------+------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|   37|    5778|   5589|    -|
+|Memory           |        2|    -|       0|      0|    0|
+|Multiplexer      |        -|    -|       -|    889|    -|
+|Register         |        -|    -|      91|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        2|   37|    5869|   6478|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      432|  360|  141120|  70560|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       ~0|   10|       4|      9|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------------+----------------------------------+---------+----+------+------+-----+
+    |                   Instance                  |              Module              | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +---------------------------------------------+----------------------------------+---------+----+------+------+-----+
+    |fdiv_32ns_32ns_32_10_no_dsp_1_U79            |fdiv_32ns_32ns_32_10_no_dsp_1     |        0|   0|     0|     0|    0|
+    |grp_inverse_matrix_hw_Pipeline_L1_L2_fu_143  |inverse_matrix_hw_Pipeline_L1_L2  |        0|   0|   240|   320|    0|
+    |grp_inverse_matrix_hw_Pipeline_L3_L4_fu_153  |inverse_matrix_hw_Pipeline_L3_L4  |        0|   0|    17|   314|    0|
+    |grp_inverse_matrix_hw_Pipeline_L5_L6_fu_158  |inverse_matrix_hw_Pipeline_L5_L6  |        0|  37|  3861|  3529|    0|
+    |grp_inverse_matrix_hw_Pipeline_L9_fu_163     |inverse_matrix_hw_Pipeline_L9     |        0|   0|   166|   121|    0|
+    |grp_inverse_matrix_hw_Pipeline_L910_fu_227   |inverse_matrix_hw_Pipeline_L910   |        0|   0|   166|   121|    0|
+    |grp_inverse_matrix_hw_Pipeline_L911_fu_235   |inverse_matrix_hw_Pipeline_L911   |        0|   0|   166|   150|    0|
+    |grp_inverse_matrix_hw_Pipeline_L93_fu_171    |inverse_matrix_hw_Pipeline_L93    |        0|   0|   166|   146|    0|
+    |grp_inverse_matrix_hw_Pipeline_L94_fu_179    |inverse_matrix_hw_Pipeline_L94    |        0|   0|   166|   146|    0|
+    |grp_inverse_matrix_hw_Pipeline_L95_fu_187    |inverse_matrix_hw_Pipeline_L95    |        0|   0|   166|   148|    0|
+    |grp_inverse_matrix_hw_Pipeline_L96_fu_195    |inverse_matrix_hw_Pipeline_L96    |        0|   0|   166|   148|    0|
+    |grp_inverse_matrix_hw_Pipeline_L97_fu_203    |inverse_matrix_hw_Pipeline_L97    |        0|   0|   166|   146|    0|
+    |grp_inverse_matrix_hw_Pipeline_L98_fu_211    |inverse_matrix_hw_Pipeline_L98    |        0|   0|   166|   150|    0|
+    |grp_inverse_matrix_hw_Pipeline_L99_fu_219    |inverse_matrix_hw_Pipeline_L99    |        0|   0|   166|   150|    0|
+    +---------------------------------------------+----------------------------------+---------+----+------+------+-----+
+    |Total                                        |                                  |        0|  37|  5778|  5589|    0|
+    +---------------------------------------------+----------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +--------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    | Memory |                Module                | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |temp_U  |inverse_matrix_hw_temp_RAM_AUTO_1R1W  |        2|  0|   0|    0|   400|   32|     1|        12800|
+    +--------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total   |                                      |        2|  0|   0|    0|   400|   32|     1|        12800|
+    +--------+--------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +---------------+-----+-----------+-----+-----------+
+    |      Name     | LUT | Input Size| Bits| Total Bits|
+    +---------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm      |  215|         47|    1|         47|
+    |grp_fu_307_ce  |   65|         12|    1|         12|
+    |grp_fu_307_p0  |   65|         12|   32|        384|
+    |grp_fu_307_p1  |   65|         12|   32|        384|
+    |inv_address0   |   59|         11|    7|         77|
+    |inv_ce0        |   59|         11|    1|         11|
+    |inv_d0         |   59|         11|   32|        352|
+    |inv_we0        |   59|         11|    1|         11|
+    |temp_address0  |  120|         24|    9|        216|
+    |temp_ce0       |   65|         15|    1|         15|
+    |temp_ce1       |    9|          2|    1|          2|
+    |temp_d0        |   20|          4|   32|        128|
+    |temp_we0       |   20|          4|    1|          4|
+    |temp_we1       |    9|          2|    1|          2|
+    +---------------+-----+-----------+-----+-----------+
+    |Total          |  889|        178|  152|       1645|
+    +---------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |                           Name                           | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                 |  46|   0|   46|          0|
+    |grp_inverse_matrix_hw_Pipeline_L1_L2_fu_143_ap_start_reg  |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L3_L4_fu_153_ap_start_reg  |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L5_L6_fu_158_ap_start_reg  |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L910_fu_227_ap_start_reg   |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L911_fu_235_ap_start_reg   |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L93_fu_171_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L94_fu_179_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L95_fu_187_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L96_fu_195_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L97_fu_203_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L98_fu_211_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L99_fu_219_ap_start_reg    |   1|   0|    1|          0|
+    |grp_inverse_matrix_hw_Pipeline_L9_fu_163_ap_start_reg     |   1|   0|    1|          0|
+    |reg_243                                                   |  32|   0|   32|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                     |  91|   0|   91|          0|
+    +----------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+-------------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  |   Source Object   |    C Type    |
++---------------+-----+-----+------------+-------------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|  inverse_matrix_hw|  return value|
+|in_0_address0  |  out|    6|   ap_memory|               in_0|         array|
+|in_0_ce0       |  out|    1|   ap_memory|               in_0|         array|
+|in_0_q0        |   in|   32|   ap_memory|               in_0|         array|
+|in_1_address0  |  out|    6|   ap_memory|               in_1|         array|
+|in_1_ce0       |  out|    1|   ap_memory|               in_1|         array|
+|in_1_q0        |   in|   32|   ap_memory|               in_1|         array|
+|inv_address0   |  out|    7|   ap_memory|                inv|         array|
+|inv_ce0        |  out|    1|   ap_memory|                inv|         array|
+|inv_we0        |  out|    1|   ap_memory|                inv|         array|
+|inv_d0         |  out|   32|   ap_memory|                inv|         array|
++---------------+-----+-----+------------+-------------------+--------------+
+
