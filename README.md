@@ -1,2 +1,2 @@
-# COMPUTADORES-AVANZADOS
-Prácticas Computadores Avanzados - Escuela Superior Informática - UCLM
+# SIST-EMPOTRADOS
+Prácticas Sistemas Empotrados - Escuela Superior de Informática - UCLM
