@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../fir_filter_src/fir_test.cpp in debug mode
+   Compiling ../../../../fir_filter_src/fir.cpp in debug mode
+   Generating csim.exe
+Software implementation
+
+Hardware implementation
+
+Vectors identical ... Test successful!
+
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

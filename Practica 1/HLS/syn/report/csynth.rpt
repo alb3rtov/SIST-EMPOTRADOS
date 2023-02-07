@@ -1,0 +1,178 @@
+
+
+================================================================
+== Synthesis Summary Report of 'fir_hw_wrapped'
+================================================================
++ General Information: 
+    * Date:           Sat Nov  5 11:49:12 2022
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        fir_filter
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu3eg-sbva484-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+-----------+-----+
+    |                   Modules                  | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |          |           |           |     |
+    |                   & Loops                  | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |    DSP   |     FF    |    LUT    | URAM|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+-----------+-----+
+    |+ fir_hw_wrapped                            |     -|  0.76|     8255|  8.255e+04|         -|     8256|     -|        no|  36 (8%)|  40 (11%)|  5178 (3%)|  4880 (6%)|    -|
+    | + fir_hw_wrapped_Pipeline_VITIS_LOOP_45_1  |     -|  5.09|     2050|  2.050e+04|         -|     2050|     -|        no|        -|         -|   14 (~0%)|   71 (~0%)|    -|
+    |  o VITIS_LOOP_45_1                         |     -|  7.30|     2048|  2.048e+04|         1|        1|  2048|       yes|        -|         -|          -|          -|    -|
+    | + fir_hw_wrapped_Pipeline_VITIS_LOOP_57_3  |     -|  5.09|     2050|  2.050e+04|         -|     2050|     -|        no|        -|         -|   14 (~0%)|   71 (~0%)|    -|
+    |  o VITIS_LOOP_57_3                         |     -|  7.30|     2048|  2.048e+04|         1|        1|  2048|       yes|        -|         -|          -|          -|    -|
+    | + fir_hw_wrapped_Pipeline_L1               |     -|  0.76|     2094|  2.094e+04|         -|     2094|     -|        no|        -|  40 (11%)|  4826 (3%)|  4208 (5%)|    -|
+    |  o L1                                      |     -|  7.30|     2092|  2.092e+04|        46|        1|  2048|       yes|        -|         -|          -|          -|    -|
+    | + fir_hw_wrapped_Pipeline_VITIS_LOOP_72_5  |     -|  5.85|     2050|  2.050e+04|         -|     2050|     -|        no|        -|         -|   16 (~0%)|   92 (~0%)|    -|
+    |  o VITIS_LOOP_72_5                         |     -|  7.30|     2048|  2.048e+04|         2|        1|  2048|       yes|        -|         -|          -|          -|    -|
+    +--------------------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+----------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++-------------------+------------+---------------+
+| Interface         | Data Width | Address Width |
++-------------------+------------+---------------+
+| s_axi_CONTROL_BUS | 32         | 4             |
++-------------------+------------+---------------+
+
+* S_AXILITE Registers
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL     | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER     | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER   | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR   | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
++-------------------+----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| Interface     | Register Mode | TDATA | TDEST | TID | TKEEP | TLAST | TREADY | TSTRB | TUSER | TVALID |
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+| INPUT_STREAM  | both          | 32    | 5     | 5   | 4     | 1     | 1      | 4     | 4     | 1      |
+| OUTPUT_STREAM | both          | 32    | 5     | 5   | 4     | 1     | 1      | 4     | 4     | 1      |
++---------------+---------------+-------+-------+-----+-------+-------+--------+-------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++---------------+-----------+---------------------------------------------+
+| Argument      | Direction | Datatype                                    |
++---------------+-----------+---------------------------------------------+
+| INPUT_STREAM  | in        | stream<hls::axis<ap_uint<32>, 4, 5, 5>, 0>& |
+| OUTPUT_STREAM | out       | stream<hls::axis<ap_uint<32>, 4, 5, 5>, 0>& |
++---------------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++---------------+---------------+-----------+
+| Argument      | HW Interface  | HW Type   |
++---------------+---------------+-----------+
+| INPUT_STREAM  | INPUT_STREAM  | interface |
+| OUTPUT_STREAM | OUTPUT_STREAM | interface |
++---------------+---------------+-----------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------+-----+--------+-------------+------+---------+---------+
+| Name                                       | DSP | Pragma | Variable    | Op   | Impl    | Latency |
++--------------------------------------------+-----+--------+-------------+------+---------+---------+
+| + fir_hw_wrapped                           | 40  |        |             |      |         |         |
+|  + fir_hw_wrapped_Pipeline_VITIS_LOOP_45_1 | 0   |        |             |      |         |         |
+|    add_ln45_fu_103_p2                      | -   |        | add_ln45    | add  | fabric  | 0       |
+|  + fir_hw_wrapped_Pipeline_VITIS_LOOP_57_3 | 0   |        |             |      |         |         |
+|    add_ln57_fu_122_p2                      | -   |        | add_ln57    | add  | fabric  | 0       |
+|  + fir_hw_wrapped_Pipeline_L1              | 40  |        |             |      |         |         |
+|    add_ln12_fu_440_p2                      | -   |        | add_ln12    | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U26       | 3   |        | mul_i       | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U18      | 2   |        | tmp_2       | fadd | fulldsp | 4       |
+|    add_ln15_fu_656_p2                      | -   |        | add_ln15    | add  | fabric  | 0       |
+|    add_ln16_fu_456_p2                      | -   |        | add_ln16    | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U27       | 3   |        | mul_i_1     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U19      | 2   |        | tmp_2_1     | fadd | fulldsp | 4       |
+|    add_ln15_1_fu_474_p2                    | -   |        | add_ln15_1  | add  | fabric  | 0       |
+|    add_ln16_1_fu_480_p2                    | -   |        | add_ln16_1  | add  | fabric  | 0       |
+|    add_ln16_2_fu_681_p2                    | -   |        | add_ln16_2  | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U28       | 3   |        | mul_i_2     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U20      | 2   |        | tmp_2_2     | fadd | fulldsp | 4       |
+|    add_ln15_2_fu_500_p2                    | -   |        | add_ln15_2  | add  | fabric  | 0       |
+|    add_ln16_3_fu_506_p2                    | -   |        | add_ln16_3  | add  | fabric  | 0       |
+|    add_ln16_4_fu_706_p2                    | -   |        | add_ln16_4  | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U29       | 3   |        | mul_i_3     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U21      | 2   |        | tmp_2_3     | fadd | fulldsp | 4       |
+|    add_ln15_3_fu_526_p2                    | -   |        | add_ln15_3  | add  | fabric  | 0       |
+|    add_ln16_5_fu_532_p2                    | -   |        | add_ln16_5  | add  | fabric  | 0       |
+|    add_ln16_6_fu_731_p2                    | -   |        | add_ln16_6  | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U30       | 3   |        | mul_i_4     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U22      | 2   |        | tmp_2_4     | fadd | fulldsp | 4       |
+|    add_ln15_4_fu_552_p2                    | -   |        | add_ln15_4  | add  | fabric  | 0       |
+|    add_ln16_7_fu_558_p2                    | -   |        | add_ln16_7  | add  | fabric  | 0       |
+|    add_ln16_8_fu_756_p2                    | -   |        | add_ln16_8  | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U31       | 3   |        | mul_i_5     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U23      | 2   |        | tmp_2_5     | fadd | fulldsp | 4       |
+|    add_ln15_5_fu_578_p2                    | -   |        | add_ln15_5  | add  | fabric  | 0       |
+|    add_ln16_9_fu_584_p2                    | -   |        | add_ln16_9  | add  | fabric  | 0       |
+|    add_ln16_10_fu_781_p2                   | -   |        | add_ln16_10 | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U32       | 3   |        | mul_i_6     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U24      | 2   |        | tmp_2_6     | fadd | fulldsp | 4       |
+|    add_ln15_6_fu_604_p2                    | -   |        | add_ln15_6  | add  | fabric  | 0       |
+|    add_ln16_11_fu_610_p2                   | -   |        | add_ln16_11 | add  | fabric  | 0       |
+|    add_ln16_12_fu_806_p2                   | -   |        | add_ln16_12 | add  | fabric  | 0       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U33       | 3   |        | mul_i_7     | fmul | maxdsp  | 3       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U25      | 2   |        | tmp_2_7     | fadd | fulldsp | 4       |
+|  + fir_hw_wrapped_Pipeline_VITIS_LOOP_72_5 | 0   |        |             |      |         |         |
+|    add_ln72_fu_123_p2                      | -   |        | add_ln72    | add  | fabric  | 0       |
++--------------------------------------------+-----+--------+-------------+------+---------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++------------------+------+------+--------+----------+---------+------+---------+
+| Name             | BRAM | URAM | Pragma | Variable | Storage | Impl | Latency |
++------------------+------+------+--------+----------+---------+------+---------+
+| + fir_hw_wrapped | 36   | 0    |        |          |         |      |         |
+|   a_U            | 4    | -    |        | a        | ram_s2p | auto | 1       |
+|   b_U            | 2    | -    |        | b        | rom_np  | auto | 1       |
+|   b_1_U          | 2    | -    |        | b_1      | rom_np  | auto | 1       |
+|   out_U          | 4    | -    |        | out      | ram_1p  | auto | 1       |
++------------------+------+------+--------+----------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+---------------------------------------------+------------------------------------------------------------+
+| Type            | Options                                     | Location                                                   |
++-----------------+---------------------------------------------+------------------------------------------------------------+
+| array_partition | dim=1 factor=2 type=block variable=p_coeffs | fir_filter_src/fir.cpp:7 in fir_hw, p_coeffs               |
+| array_partition | dim=1 factor=2 type=block variable=p_in     | fir_filter_src/fir.cpp:8 in fir_hw, p_in                   |
+| interface       | s_axilite port=return bundle=CONTROL_BUS    | fir_filter_src/fir.cpp:31 in fir_hw_wrapped, return        |
+| interface       | axis port=INPUT_STREAM                      | fir_filter_src/fir.cpp:32 in fir_hw_wrapped, INPUT_STREAM  |
+| interface       | axis port=OUTPUT_STREAM                     | fir_filter_src/fir.cpp:33 in fir_hw_wrapped, OUTPUT_STREAM |
+| pipeline        | II=1                                        | fir_filter_src/fir.cpp:47 in fir_hw_wrapped                |
+| pipeline        | II=1                                        | fir_filter_src/fir.cpp:59 in fir_hw_wrapped                |
+| pipeline        | II=1                                        | fir_filter_src/fir.cpp:74 in fir_hw_wrapped                |
++-----------------+---------------------------------------------+------------------------------------------------------------+
+
+
