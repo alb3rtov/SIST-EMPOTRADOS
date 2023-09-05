@@ -1,4 +1,4 @@
-# SIST-EMPOTRADOS
+# SISTEMAS EMPOTRADOS
 Prácticas Sistemas Empotrados - Escuela Superior de Informática - UCLM
 
 - Práctica 1 - Filtro FIR (HLS y VIVADO)
